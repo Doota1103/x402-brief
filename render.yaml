@@ -1,0 +1,14 @@
+# Render Blueprint — auto-detected when this repo is connected.
+# Deploy: render.com → New → Web Service → connect repo → plan: Free.
+services:
+  - type: web
+    name: x402-brief
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python x402-server.py
+    healthCheckPath: /.well-known/x402
+    envVars:
+      - key: X402_PAY_TO
+        sync: false # set in dashboard: 0xE972312a00F195F6bc1746ed6af43945509C94bA
+      - key: PYTHONUNBUFFERED
+        value: "1"

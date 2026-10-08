@@ -1,0 +1,2 @@
+# x402-server.py is stdlib-only (http.server + urllib). No dependencies.
+# This file exists so PaaS build steps (pip install -r requirements.txt) succeed.
